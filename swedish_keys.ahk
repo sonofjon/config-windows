@@ -16,14 +16,13 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 ;; Alternative implementation
 ;;   Using scan codes, hence should avoid encoding issues, but alas,
-;;   it requires the same fix in notepad.exe as above. Also, shifted
-;;   letters don't work in this version.
+;;   it requires the same fix in notepad.exe as above. 
 ; ; right alt + [
 ; >!SC01A::Send, å
-; >!+SC01A::Send, å
+; >!+SC01A::Send, Å
 ; ; right alt + '
 ; >!SC028::Send, ä
-; >!+SC028::Send, ä
+; >!+SC028::Send, Ä
 ; ; right alt + ;
 ; >!SC027::Send, ö
-; >!+SC027::Send, ö
+; >!+SC027::Send, Ö
