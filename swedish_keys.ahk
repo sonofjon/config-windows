@@ -7,8 +7,8 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 ;;   Note, to make this work, you have to save this file in Windows
 ;;   with notepad.exe as UTF-8 with BOM.
 >![::Send, å
->+![::Send, Å
+>!+[::Send, Å
 >!'::Send, ä
->+!'::Send, Ä
+>!+'::Send, Ä
 >!;::Send, ö
->+!;::Send, Ö
+>!+;::Send, Ö
