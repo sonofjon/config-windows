@@ -3,7 +3,7 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
-; Press Win+Shift+Y to activate the System Monitor
-#+Y::
-  WinActivate, Moo0 System Monitor
-  return
+; Press F12 to activate the System Monitor
+$F12::
+WinActivate, Moo0 System Monitor
+return
