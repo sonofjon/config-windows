@@ -8,25 +8,17 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 ; Press F12 to raise or lower the System Monitor
 $F12::
 ; Get the active window handle and title
-WinGet, activeWindowHwnd, ID, A
 WinGetTitle, activeWindowTitle, A
 ; MsgBox, %activeWindowTitle%
-; MsgBox, %activeWindowHwnd%
-
-; Get the "system monitor" window handle and title
-WinGet, sysMonitorHwnd, ID, % "Moo0 System Monitor"
-WinGetTitle, sysMonitorTitle, % "ahk_id " sysMonitorHwnd
-; MsgBox, %sysMonitorTitle%
-; MsgBox, %sysMonitorHwnd%
 
 ; If the active window is "system monitor" then activate the previously active window
-if (activeWindowTitle = sysMonitorTitle) {
+if (activeWindowTitle = "Moo0 System Monitor") {
         ; MsgBox, Test 1
         Send, {Alt down}{Tab}{Alt up}
 }
 ; Otherwise activate the "system monitor" window
 else {
         ; MsgBox, Test 2
-	WinActivate, %sysMonitorTitle%
+	WinActivate, Moo0 System Monitor
 }
 return
