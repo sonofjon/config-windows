@@ -4,16 +4,17 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
-; Ctl+Tab in chrome to jump to last used tab!
+
+; Alt+s in browser to jump to last used tab!
 ;   Reference: https://www.youtube.com/watch?v=Xmj3OtVC2yU
-#If WinActive("ahk_exe Chrome.exe")
-    prevChromeTab()
+#If WinActive("ahk_exe chrome.exe") or WinActive("ahk_exe msedge.exe")
+    prevTab()
     {
         send ^+a
         SetKeyDelay, 39
         send {BackSpace}
         send {Enter}
     }
-    ^Tab::prevChromeTab()
+    !s::prevTab()
     return
 #If
