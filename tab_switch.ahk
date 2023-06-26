@@ -11,7 +11,9 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
     prevTab()
     {
         send ^+a
-        SetKeyDelay, 39
+        ; SetKeyDelay, 39
+	Sleep 150 ; 75 ms works on recently active (non-sleeping) tabs
+                  ; 150 ms generally works on not recently active (sleeping) tabs 
         ; send {BackSpace}
         send {Enter}
     }
