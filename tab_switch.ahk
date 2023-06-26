@@ -12,7 +12,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
     {
         send ^+a
         SetKeyDelay, 39
-        send {BackSpace}
+        ; send {BackSpace}
         send {Enter}
     }
     !s::prevTab()
