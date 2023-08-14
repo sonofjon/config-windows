@@ -1,5 +1,3 @@
-; Reference: https://gist.github.com/nbrombal/c269fc5a5e3b3765fbca839cafd742b5
-
 ;#NoTrayIcon
 #NoEnv
 #Persistent
@@ -7,22 +5,25 @@
 SendMode Input
 CoordMode, Mouse, Screen
 
-; Tracks whether a hot corner was just activated, preventing it from being
-; activated repeatedly.
+;; Hot Corners
+;;   Reference: https://gist.github.com/nbrombal/c269fc5a5e3b3765fbca839cafd742b5
+
+;; Tracks whether a hot corner was just activated, preventing it from being
+;; activated repeatedly.
 global PreviousCorner := "None"
 
-; A comma-separated list of process names. If one of these processes is the
-; active window when a hot corner is activated, the hot corner action will be
-; ignored. Great for full-screen games!
+;; A comma-separated list of process names. If one of these processes is the
+;; active window when a hot corner is activated, the hot corner action will be
+;; ignored. Great for full-screen games!
 ;
-; To get a program's process name, open the Task Manager, find the program in
-; the list (you may need to click "More details" and then expand the program's
-; processes using an arrow), right click it and select "Go to details".
+;; To get a program's process name, open the Task Manager, find the program in
+;; the list (you may need to click "More details" and then expand the program's
+;; processes using an arrow), right click it and select "Go to details".
 ExcludedProcesses := "FactoryGame-Win64-Shipping.exe,League of Legends.exe"
 
-; The actions to take when activating specific corners. Refer to AutoHotKey's
-; documentation (https://www.autohotkey.com/docs/Hotkeys.htm) for ideas on what
-; you can do here.
+;; The actions to take when activating specific corners. Refer to AutoHotKey's
+;; documentation (https://www.autohotkey.com/docs/Hotkeys.htm) for ideas on what
+;; you can do here.
 UpperLeftAction() {
 }
 
@@ -37,11 +38,11 @@ LowerRightAction() {
     Send, #d
 }
 
-; Kick off the hot corners routine on a repeating timer.
+;; Kick off the hot corners routine on a repeating timer.
 SetTimer, HotCorners, 10
 return
 
-; The primary routine for monitoring hot corners and triggering actions.
+;; The primary routine for monitoring hot corners and triggering actions.
 HotCorners:
     ; Check for the process name of the active window.
     WinGet, ActiveProcessName, ProcessName, A
@@ -71,9 +72,9 @@ HotCorners:
 
     return
 
-; Retrieves the currently activated hot corner based on the current mouse cursor
-; position, to within the specified pixel tolerance. A higher tolerance results
-; in "larger" hot corners.
+;; Retrieves the currently activated hot corner based on the current mouse cursor
+;; position, to within the specified pixel tolerance. A higher tolerance results
+;; in "larger" hot corners.
 GetCurrentCorner(Tolerance) {
     MouseGetPos, MouseX, MouseY
 

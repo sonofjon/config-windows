@@ -7,6 +7,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 ;;   Note, to make this work, you have to save this file in Windows
 ;;   with notepad.exe as UTF-8 with BOM. Reference:
 ;;   https://www.autohotkey.com/docs/FAQ.htm#nonascii
+
 >![::Send, å
 >!+[::Send, Å
 >!'::Send, ä

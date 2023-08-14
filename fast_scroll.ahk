@@ -3,6 +3,8 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
+;; Fast scrolling
+
 ;; Change the masking key to something unassigned
 ;;   Reference: https://www.autohotkey.com/docs/commands/_MenuMaskKey.htm
 #MenuMaskKey vkE8
