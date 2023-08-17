@@ -4,6 +4,9 @@ SendMode Input  ; Recommended for new scripts due to its superior speed and reli
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 ;; Archive message with Backspace in all panes
+;;   NOTE: This script does not work as intended: it triggers an archive
+;;         action when pressing Backspace while composing emails in the main
+;;         window
 
 #IfWinActive, ahk_exe OUTLOOK.EXE
 
