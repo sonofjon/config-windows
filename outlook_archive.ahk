@@ -6,6 +6,10 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 ;; Archive message with Backspace in all panes
 
 #IfWinActive, ahk_exe OUTLOOK.EXE
+
+;; Only operate on the main window
+SetTitleMatchMode, 2 ; Use a more flexible window title matching
+#IfWinActive, Outlook
 Backspace::
 
 ;; Navigate to message list to performe the archive action
